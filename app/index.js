@@ -10,13 +10,17 @@ var app = express();
 if (!fs.existsSync('./logs/')) {
     fs.mkdirSync('./logs/');
 }
-var logStream = fs.createWriteStream(`./logs/${new Date().toISOString().split('T')[0]}.log`, {
-    flags: 'a+'
-});
-app.use(logger('tiny', {
-    stream: logStream,
-}));
-app.use(logger('tiny'));
+
+if(process.env.NODE_ENV !== 'test'){
+    var logStream = fs.createWriteStream(`./logs/${new Date().toISOString().split('T')[0]}.log`, {
+        flags: 'a+'
+    });
+    app.use(logger('tiny', {
+        stream: logStream,
+    }));
+    app.use(logger('tiny'));
+}
+
 
 
 app.get('/convert', async (req, res, next) => {
