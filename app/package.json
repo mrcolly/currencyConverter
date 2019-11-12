@@ -4,7 +4,8 @@
   "description": "Web API to convert currency",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "author": "Alessio Colombo",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
     "xml2js": "^0.4.22"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
   }
 }
