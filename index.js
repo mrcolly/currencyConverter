@@ -13,10 +13,10 @@ if (!fs.existsSync('./logs/')) {
 var logStream = fs.createWriteStream(`./logs/${new Date().toLocaleDateString()}.log`, {
     flags: 'a+'
 });
-app.use(logger('dev', {
+app.use(logger('tiny', {
     stream: logStream,
 }));
-app.use(logger('dev'));
+app.use(logger('tiny'));
 
 
 app.get('/convert', async (req, res, next) => {
