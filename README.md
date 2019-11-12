@@ -15,9 +15,9 @@ NODE_ENV=< test | dev >
 Install dependencies.
 
 ```sh
-$ cd currency_converter/app
-$ npm i
-$ cd ..
+cd currencyConverter/app
+npm i
+cd ..
 ```
 
 run docker 
